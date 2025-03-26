@@ -458,7 +458,7 @@
         </div>
 
         <div class="label">ご紹介の場合は紹介者様の<br>お名前をご入力ください</div>
-        <input type="tel" id="introduction" placeholder="紹介者様のお名前">
+        <input type="text" id="introduction" placeholder="紹介者様のお名前">
 
         <div class="label" id="course">メニューをお選びください</div>
         <div class="info-text">※メニューを選択すると空き状況のカレンダーが表示されます</div>
@@ -486,9 +486,9 @@
                 <span class="highlight-text">◆まつ毛パーマ◆</span>
             </div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this, 'treatment12')" data-price="15000">ラッシュリフト(まつ毛パーマ)</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment13')" data-price="15000">ラッシュリフト＋アイブロウWAX</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment14')" data-price="15000">ラッシュリフト＋ハリウッドブロウリフト</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment3')" data-price="15000">ラッシュリフト(まつ毛パーマ)</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment4')" data-price="15000">ラッシュリフト＋アイブロウWAX</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment5')" data-price="15000">ラッシュリフト＋ハリウッドブロウリフト</button>
             </div>
         </div>
 
@@ -497,10 +497,10 @@
                 <span class="highlight-text">◆まつ毛エクステ◆</span>
             </div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this, 'treatment1')" data-price="15000">フラットラッシュ</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment2')" data-price="15000">ボリュームラッシュ</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment3')" data-price="15000">バインドロック</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment4')" data-price="15000">リペア(付け足し)</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment6')" data-price="15000">フラットラッシュ</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment7')" data-price="15000">ボリュームラッシュ</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment8')" data-price="15000">バインドロック</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment9')" data-price="15000">リペア(付け足し)</button>
             </div>
 
             <label id="repairLabel"></label>
@@ -525,10 +525,10 @@
                 <span class="highlight-text">◆フェイシャルメニュー◆</span>
             </div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this, 'treatment12')" data-price="15000">光フェイシャル</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment13')" data-price="15000">エクソソームハーブピーリング</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment14')" data-price="15000">ジュエリーピール</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment14')" data-price="15000">Wピーリング</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment10')" data-price="15000">光フェイシャル</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment11')" data-price="15000">エクソソームハーブピーリング</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment12')" data-price="15000">ジュエリーピール</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment13')" data-price="15000">Wピーリング</button>
             </div>
         </div>
 
@@ -594,7 +594,7 @@
 
         document.addEventListener('DOMContentLoaded', function () {
             liff.init({
-                liffId: '2005916281-P6oxY72L'
+                liffId: '2007125858-glkKnj1R'
             }).then(() => {
                 console.log('LIFF初期化成功');
             }).catch((err) => {
@@ -606,8 +606,8 @@
 
         // 訪問回数ごとの時間設定 (例：初めて=20分、2回目以降=15分)
         let visitTimes = {
-            'オフあり': 70,
-            'オフなし': 0
+            '初回': 0,
+            '2回目以降': 0
         };
 
         let selectedVisitTime = 0; // 訪問回数で選択された時間
@@ -641,7 +641,6 @@
             'Wピーリング': 105
         };
 
-
         let selectedMenuTime = 0;
 
         // 入力内容をローカルストレージに保存
@@ -661,7 +660,7 @@
 
         function updateDisplayInfo() {
             const name = document.getElementById('name').value;
-            const visitCountText = visitCount ? `・<span style="color:#d19161;"><strong>ネイルのオフに関して</strong></span>：${visitCount}` : '・ネイルのオフに関してが未選択です';
+            const visitCountText = visitCount ? `・<span style="color:#d19161;"><strong>来店回数</strong></span>：${visitCount}` : '・来店回数';
             const selectedMenuText = selectedMenu ? `・<span style="color:#d19161;"><strong>コース</strong></span>：${selectedMenu}` : '・コースが未選択です';
 
             const selectedSymptomText = selectedSymptom.length > 0
@@ -703,7 +702,8 @@
         </div>
         <hr>
         <div class="info-row">
-            <p>${totalTimeText}</p>
+            <p>${irradiationsText}</p>
+            <button class="edit-button" onclick="scrollToElement('firstirradiations')">修正する</button>
         </div>
         <hr>
         <div class="info-row">
@@ -835,31 +835,31 @@
             fetchAvailability(currentDate);
 
             if (treatmentId === 'treatment1') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：110分（オフあり＋70分）</strong><br></div><div style="text-align: right;"><strong>料金：7,800円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：60分</strong><br>自眉を活かして形の整った垢抜け眉毛に！<br>余分な毛をWAX脱毛することでスッキリ立体感もUP</div><div style="text-align: right;"><strong>料金：5,500円</strong></div>`;
             } else if (treatmentId === 'treatment2') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：80分（オフあり＋70分）</strong><br></div><div style="text-align: right;"><strong>料金：6,200円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：90分</strong><br>眉毛の毛流れ矯正＋WAX脱毛でふさっと抜け感のある垢抜け眉に！（ワックス処理込み）</div><div style="text-align: right;"><strong>料金：6,980円</strong></div>`;
             } else if (treatmentId === 'treatment3') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：60分（オフあり＋70分）</strong><br></div><div style="text-align: right;"><strong>料金：5,500円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：60分</strong><br>雨の日もカールキープ！高濃度美容液導入込み</div><div style="text-align: right;"><strong>料金：6,980円</strong></div>`;
             } else if (treatmentId === 'treatment4') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：80分（オフあり＋70分）</strong><br></div><div style="text-align: right;"><strong>料金：6000円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：100分</strong><br></div><div style="text-align: right;"><strong>料金：10000円</strong></div>`;
             } else if (treatmentId === 'treatment5') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：80分（オフあり＋70分）<br>2本アート付き♪</strong><br></div><div style="text-align: right;"><strong>料金：6,500円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：120分</strong><br></div><div style="text-align: right;"><strong>料金：12,000円</strong></div>`;
             } else if (treatmentId === 'treatment6') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：110分（オフあり＋70分）</strong><br></div><div style="text-align: right;"><strong>料金：7,000円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;"><strong></strong>80本 (60分)：6,500円<br>100本 (60分)：7,500円<br>120本 (90分)：8,000円<br>付け放題 (90分)：8,500円</div><div style="text-align: center;"><strong>以下の中からお選びください</strong></div>`;
             } else if (treatmentId === 'treatment7') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：60分（オフあり＋70分）</strong><br></div><div style="text-align: right;"><strong>料金：5,100円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;"><strong></strong>80本 (60分)：6,500円<br>100本 (60分)：7,500円<br>120本 (90分)：8,000円<br>付け放題 (90分)：8,500円</div><div style="text-align: center;"><strong>以下の中からお選びください</strong></div>`;
             } else if (treatmentId === 'treatment8') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>何本希望か下のボタンを選んでください<br>S：1本450円<br>M：1本550円<br>L：1本650円<br>1本あたりの所要時間：15分</strong><br></div><div style="text-align: right;"><strong></strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;"><strong></strong>80本 (90分)：8,000円<br>100本 (90分)：9,000円<br>120本 (120分)：10,000円<br>160本(120分)：12,000円</div><div style="text-align: center;"><strong>以下の中からお選びください<strong></strong></div>`;
             } else if (treatmentId === 'treatment9') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>何本希望か下のボタンを選んでください<br>S：1本450円<br>M：1本550円<br>L：1本650円<br>1本あたりの所要時間：15分</strong><br></div><div style="text-align: right;"><strong></strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：45分</strong><br>※本数によって料金・時間に変動がございます</div><div style="text-align: right;"><strong>料金：2,970円</strong></div>`;
             } else if (treatmentId === 'treatment10') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：60分（オフあり＋70分）</strong><br></div><div style="text-align: right;"><strong>料金：2,550円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：90分</strong><br>準備中</div><div style="text-align: right;"><strong>料金：11,000円</strong></div>`;
             } else if (treatmentId === 'treatment11') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>自店オフ：2550円<br>他店オフ：3000円<br>所要時間：60分<br>（オフあり＋70分）</strong><br></div><div style="text-align: right;"><strong></strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：60分</strong><br>準備中</div><div style="text-align: right;"><strong>料金：9,800円</strong></div>`;
             } else if (treatmentId === 'treatment12') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：110分（オフあり＋70分）</strong><br></div><div style="text-align: right;"><strong>料金：8,700円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：60分</strong><br>準備中</div><div style="text-align: right;"><strong>料金：9,800円</strong></div>`;
             } else if (treatmentId === 'treatment13') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：80分（オフあり＋70分）</strong><br></div><div style="text-align: right;"><strong>料金：5,800円</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：90分</strong><br>準備中</div><div style="text-align: right;"><strong>料金：18,500円</strong></div>`;
             } else if (treatmentId === 'treatment14') {
                 treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：60分</strong><br></div><div style="text-align: right;"><strong>料金：3,500円</strong></div>`;
             } else if (treatmentId === 'treatment15') {
@@ -1026,6 +1026,7 @@
             const formData = {
                 name: document.getElementById('name').value.trim(),
                 phone: document.getElementById('phone').value.trim(),
+                introduction: document.getElementById('introduction').value.trim(),
                 visitCount: visitCount,
                 selectedMenu: selectedMenu,
                 selectedSymptom: selectedSymptom && selectedSymptom.length > 0 ? selectedSymptom : null, // 空の選択肢をチェック
@@ -1050,11 +1051,6 @@
                 return;
             }
 
-            if (!formData.irradiationsCount) {
-                alert('メニューを選択してください。');
-                return;
-            }
-
             if (!formData.dates) {
                 alert('希望日時を選択してください。');
                 return;
@@ -1063,7 +1059,7 @@
             // LINEトークにメッセージを送信
             liff.sendMessages([{
                 type: 'text',
-                text: `【予約フォーム】\nお名前：${formData.name}\n電話番号：${formData.phone}\nコース：${formData.selectedMenu}\nメニュー：${formData.selectedSymptom}${formData.irradiationsCount}\nネイル：${formData.visitCount}\n希望日時：\n ${formData.dates[0]}\nメッセージ：${formData.message}`
+                text: `【予約フォーム】\nお名前：${formData.name}\n電話番号：${formData.phone}\nご来店回数：${formData.visitCount}\n紹介者様：${formData.introduction}\nコース：${formData.selectedMenu}\nメニュー：${formData.selectedSymptom},${formData.irradiationsCount}\n希望日時：\n ${formData.dates[0]}\nメッセージ：${formData.message}`
             }]).then(() => {
                 /* メッセージ送信成功時の処理 */
                 alert('当日キャンセルは無いようにお願いいたします。');
@@ -1095,7 +1091,7 @@
                 return;
             }
 
-            const url = 'https://script.google.com/macros/s/AKfycbyWpnq6bDciRpMWgq_65inuGZLtw9ZJFK9UqqdR_6aIH2l-oCXfnbdUhJX2r3c8u_e3/exec' +
+            const url = 'https://script.google.com/macros/s/AKfycbydkoe7dSafqWqWY1zMq4gWxhbHx7ApVRDK1N6zrlXi8t-GgNjVsMnlHQOkkiDKUGg3/exec' +
                 `?startTime=${startTime.toISOString()}&endTime=${endTime.toISOString()}`;
 
             try {
@@ -1128,12 +1124,17 @@
             const table = calendar.querySelector('table tbody');
 
             const times = [
-                '10:00', '10:30', '11:00', '11:30',
-                '12:00', '12:30', '13:00', '13:30',
-                '14:00', '14:30', '15:00', '15:30',
-                '16:00', '16:30', '17:00', '17:30',
-                '18:00', '18:30', '19:00'
-            ];
+    '10:00', '10:15', '10:30', '10:45',
+    '11:00', '11:15', '11:30', '11:45',
+    '12:00', '12:15', '12:30', '12:45',
+    '13:00', '13:15', '13:30', '13:45',
+    '14:00', '14:15', '14:30', '14:45',
+    '15:00', '15:15', '15:30', '15:45',
+    '16:00', '16:15', '16:30', '16:45',
+    '17:00', '17:15', '17:30', '17:45',
+    '18:00', '18:15', '18:30', '18:45',
+    '19:00'
+];
 
             if (table.rows.length === 0) {
                 for (const time of times) {
