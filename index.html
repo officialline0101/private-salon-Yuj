@@ -1,11 +1,72 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>予約フォーム</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
+        /* 右端の細いナビ（固定） */
+        .side-nav {
+            position: fixed; /* 画面スクロールしても固定 */
+            right: -5px; /* さらに右へ */
+            top: 80%; /* 画面中央に固定 */
+            transform: translateY(-50%) translateX(20px); /* 中央配置と右ずらし */
+            background: #bd9888;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4px;
+            border-radius: 10px 0 0 10px;
+            z-index: 1000;
+            width: 35px; /* さらに細く */
+        }
+
+        .side-nav a:active {
+            transform: scale(1.0); /* タップした後に元のサイズに戻す */
+        }
+
+        .side-nav a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-size: 10px;
+            margin: 5px 0;
+            padding: 5px;
+            transition: background 0.3s, transform 0.2s;
+            border-radius: 5px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+
+        .side-nav a span {
+            font-size: 24px; /* 矢印をさらに大きく */
+            position: absolute;
+            left: -0px; /* 左端に寄せる */
+            top: 13px; /* さらに下へ */
+        }
+
+        /* スマホ用の微調整 */
+        @media (max-width: 600px) {
+            .side-nav {
+                right: 2px; /* スマホではさらに右端に */
+                width: 30px; /* もっと細く */
+            }
+
+            .side-nav a {
+                width: 28px;
+                height: 28px;
+            }
+
+            .side-nav a i {
+                font-size: 12px; /* スマホではもっと小さく */
+            }
+        }
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f7f7f7;
@@ -442,6 +503,14 @@
 </head>
 
 <body>
+    <!-- 右側の追従ナビ -->
+    <div class="side-nav" id="sideNav">
+        <a href="#section-message">
+            <span>⇩</span>
+            <i class="fas fa-comment"></i>
+        </a>
+    </div>
+
     <div class="container">
         <h1>private salon Yuj<br>予約フォーム
         </h1>
@@ -473,7 +542,7 @@
 
         <div id="male" class="menu-section">
             <div class="highlight-background">
-                <span class="highlight-text">◆眉毛メニュー◆</span>
+                <span class="highlight-text">眉毛メニュー</span>
             </div>
             <div class="symptoms">
                 <button type="button" onclick="selectSymptom(this, 'treatment1')" data-price="15000">アイブロウWAX</button>
@@ -483,7 +552,7 @@
 
         <div id="female" class="menu-section">
             <div class="highlight-background">
-                <span class="highlight-text">◆まつ毛パーマ◆</span>
+                <span class="highlight-text">まつ毛パーマ</span>
             </div>
             <div class="symptoms">
                 <button type="button" onclick="selectSymptom(this, 'treatment3')" data-price="15000">ラッシュリフト(まつ毛パーマ)</button>
@@ -494,7 +563,7 @@
 
         <div id="extensions" class="menu-section">
             <div class="highlight-background">
-                <span class="highlight-text">◆まつ毛エクステ◆</span>
+                <span class="highlight-text">まつ毛エクステ</span>
             </div>
             <div class="symptoms">
                 <button type="button" onclick="selectSymptom(this, 'treatment6')" data-price="15000">フラットラッシュ</button>
@@ -522,7 +591,7 @@
 
         <div id="facial" class="menu-section">
             <div class="highlight-background">
-                <span class="highlight-text">◆フェイシャルメニュー◆</span>
+                <span class="highlight-text">フェイシャルメニュー</span>
             </div>
             <div class="symptoms">
                 <button type="button" onclick="selectSymptom(this, 'treatment10')" data-price="15000">光フェイシャル</button>
@@ -576,7 +645,7 @@
         <div class="label">ご予約内容</div>
         <div id="displayInfo"></div> <!-- ここに選択された情報を表示します -->
 
-        <button class="submit-button" onclick="submitForm()">予約を行う</button>
+        <button class="submit-button" onclick="submitForm()" div id="section-message">予約を行う</button>
     </div>
 
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
@@ -1095,7 +1164,7 @@
                 return;
             }
 
-            const url = 'https://script.google.com/macros/s/AKfycbz8jE52tRUib916H_1EU_pYM_82ImUQ5pYhRkdajGlc-nMPvFCyTXa5fmkamuq_qgdtZg/exec' +
+            const url = 'https://script.google.com/macros/s/AKfycbydkoe7dSafqWqWY1zMq4gWxhbHx7ApVRDK1N6zrlXi8t-GgNjVsMnlHQOkkiDKUGg3/exec' +
                 `?startTime=${startTime.toISOString()}&endTime=${endTime.toISOString()}`;
 
             try {
