@@ -68,7 +68,7 @@
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
             background-color: #f7f7f7;
             display: flex;
             justify-content: center;
@@ -81,41 +81,62 @@
         }
 
         .container {
-            background-color: #fdfdfd;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            width: 90%;
-            max-width: 500px;
-            padding: 25px;
-            box-sizing: border-box;
-            margin: 0 auto;
-        }
+    font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+    font-weight: 300;
+    background-color: #fdfdfd;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    padding: 25px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
 
-        h1 {
-            background: linear-gradient(135deg, #6e4537, #8d6455);
-            color: white;
-            padding: 20px;
-            border-radius: 0 15px 0px 45px;
-            text-align: center;
-            display: block;
-            margin: -20px -15px 20px -15px;
-            font-size: 26px;
-            font-weight: 600;
-            box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.05);
-            position: relative;
-            overflow: hidden;
-        }
+h1 {
+    font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+    font-weight: 300;
+    background: linear-gradient(135deg, #6e4537, #8d6455);
+    color: white;
+    padding: 20px;
+    border-radius: 0 15px 0px 45px;
+    text-align: center;
+    display: block;
+    margin: -20px -15px 20px -15px;
+    font-size: 26px;
+    font-weight: 600;
+    box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+h1::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px; /* ←ここで横幅を自由に指定！ */
+    height: 80px;
+    background-color: #e8dfd9;
+    border-radius: 10px;
+    z-index: -1;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
 
         .label {
-            display: block;
-            margin-bottom: 10px;
-            padding: 10px;
-            font-weight: bold;
-            background-color: #bd9888;
-            color: white;
-            border-radius: 4px;
-            text-align: center;
-        }
+    font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+    font-weight: 300; /* 細字だけを指定 */
+    display: block;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #bd9888;
+    color: white;
+    border-radius: 4px;
+    text-align: center;
+}
+
 
         input[type="text"],
         input[type="tel"],
@@ -171,6 +192,8 @@
         }
 
         .submit-button {
+            font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+            font-weight: 300;
             width: 100%;
             padding: 15px;
             border: none;
@@ -321,6 +344,8 @@
         }
 
         .loading-text {
+            font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+            font-weight: 300;
             margin-top: 20px;
             /* スピナーとテキストの間隔 */
             font-size: 15px;
@@ -369,6 +394,8 @@
         }
 
         #treatment-text {
+            font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+            font-weight: 300;
             background-color: #f7f7f7;
             padding: 10px;
             border-radius: 4px;
@@ -376,6 +403,8 @@
         }
 
         .highlight-background {
+            font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+            font-weight: 300;
             background-color: #f9f9d6;
             padding: 10px;
             border-radius: 10px;
@@ -387,6 +416,8 @@
         }
 
         .highlight-text {
+            font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+            font-weight: 300;
             display: block;
             font-weight: bold;
             text-align: center;
@@ -404,6 +435,8 @@
         }
 
         .info-text {
+            font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+            font-weight: 300;
             margin-top: 20px;
             /* 上の余白 */
             margin-bottom: 10px;
@@ -422,6 +455,8 @@
         /* 携帯端末向けのレスポンシブデザイン */
         @media (max-width: 768px) {
             .info-text {
+                font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+                font-weight: 300;
                 font-size: 11.5px;
                 /* スマホでは少し小さく */
                 margin-top: 10px;
@@ -459,6 +494,8 @@
         }
 
         .highlight-background {
+            font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+            font-weight: 300;
             cursor: pointer;
             background-color: #bd9888;
             padding: 10px;
@@ -481,7 +518,8 @@
         }
 
         .highlight-text {
-            font-weight: bold;
+            font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+            font-weight: 300;
             display: inline-block;
             color: #fff;
             /* オプションテキストの色 */
@@ -518,6 +556,8 @@
         }
 
         button {
+            font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+            font-weight: 300;
             padding: 12px;
             border: none;
             border-radius: 6px;
@@ -534,6 +574,8 @@
         }
 
         .submit-button {
+            font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+            font-weight: 300;
             width: 100%;
             padding: 15px;
             font-size: 18px;
@@ -560,7 +602,7 @@
         }
 
         button.active {
-            outline: 2px solid #bd9888;
+            outline: 2px solid #f0d2c4;
             /* ここで枠線を指定 */
             outline-offset: 2px;
         }
@@ -652,8 +694,8 @@
 
     <div class="container">
         <h1>
-            <span style="font-size: 1.4em; color: #f3f3f3;">private salon Yuj</span><br>
-            <span style="color: #ececec;">予約フォーム</span>
+            <span style="font-size: 1.25em; color: #724937;">private salon Yuj</span><br>
+            <span style="font-size: 1.1em; color: #5c3727;">予約フォーム</span>
         </h1>
 
         <div class="label">お客様名</div>
