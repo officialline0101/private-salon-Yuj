@@ -702,8 +702,8 @@ h1 {
         <div class="info-text">※メニューを選択すると空き状況のカレンダーが表示されます</div>
         <div class="menu-sections">
             <button type="button" onclick="showMenu('male')">眉毛メニュー</button>
-            <button type="button" onclick="showMenu('female')">まつ毛パーマ</button>
-            <button type="button" onclick="showMenu('extensions')">まつ毛エクステ</button>
+            <button type="button" onclick="showMenu('female')">まつげパーマ</button>
+            <button type="button" onclick="showMenu('extensions')">まつげエクステ</button>
             <button type="button" onclick="showMenu('facial')">フェイシャルメニュー</button>
         </div>
 
@@ -763,7 +763,7 @@ h1 {
                 <span class="highlight-text">フェイシャルメニュー</span>
             </div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this, 'treatment10')" data-price="15000">発育フェイシャルエステ</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment10')" data-price="15000">肌育フェイシャルエステ</button>
             </div>
         </div>
 
@@ -1088,13 +1088,13 @@ h1 {
                 treatmentText.innerHTML = `<div style="text-align: left;"><strong></strong>80本 (90分)：8,000円<br>100本 (90分)：9,000円<br>120本 (120分)：10,000円<br>160本(120分)：12,000円</div><div style="text-align: center;"><strong>以下の中からお選びください<strong></strong></div>`;
             } else if (treatmentId === 'treatment9') {
                 treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：45分</strong><br>※本数によって料金・時間に変動がございます</div><div style="text-align: right;"><strong>料金：2,970円</strong></div>`;
-            } else if (treatmentId === 'treatment10') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：90分</strong><br>【肌育フェイシャルエステ】<br>
-                4種のフェイシャルメニューからお悩みやご希望に合わせたご相談が可能です。<br>
-                ・光フェイシャル¥11,000<br>
-                ・エクソソームハーブピーリング¥9,800<br>
-                ・ジュエリーピール¥9,800<br>
-                ・Wピーリング¥18,500</div><div style="text-align: right;"></div>`;
+} else if (treatmentId === 'treatment10') {
+    treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：90分</strong><br>
+    4種のフェイシャルメニューからお悩みやご希望に合わせたご相談が可能です。<br>
+    <span style="font-size: 0.8em;">・光フェイシャル 11,000円</span><br>
+    <span style="font-size: 0.8em;">・エクソソームハーブピーリング 9,800円</span><br>
+    <span style="font-size: 0.8em;">・ジュエリーピール 9,800円</span><br>
+    <span style="font-size: 0.8em;">・Wピーリング 18,500円</span></div><div style="text-align: right;"></div>`;
             } else if (treatmentId === 'treatment11') {
                 treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：60分</strong><br>準備中</div><div style="text-align: right;"><strong>料金：9,800円</strong></div>`;
             } else if (treatmentId === 'treatment12') {
