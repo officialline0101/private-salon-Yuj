@@ -751,9 +751,9 @@ h1 {
 
             <label id="baindLabel"></label>
             <div id="baindButtons" class="irradiations">
-                <button type="button" id="oneirradiations" onclick="selectirradiations(this)">80本 (60分)</button>
-                <button type="button" id="tuirradiations" onclick="selectirradiations(this)">100本 (60分)</button>
-                <button type="button" id="suriirradiations" onclick="selectirradiations(this)">120本 (90分)</button>
+                <button type="button" id="oneirradiations" onclick="selectirradiations(this)">80本 (90分)</button>
+                <button type="button" id="tuirradiations" onclick="selectirradiations(this)">100本 (90分)</button>
+                <button type="button" id="suriirradiations" onclick="selectirradiations(this)">120本 (120分)</button>
                 <button type="button" id="foirradiations" onclick="selectirradiations(this)">160本 (120分)</button>
             </div>
         </div>
@@ -851,9 +851,13 @@ h1 {
         // 訪問回数ごとの時間設定 (例：初めて=20分、2回目以降=15分)
         let irradiationsTimes = {
             '80本 (60分)': 0,
+            '80本 (90分)': 0,
             '100本 (60分)': 0,
             '120本 (90分)': 20,
+            '100本 (90分)': 10,
+            '120本 (120分)': 30,
             '160本 (90分)': 30,
+            '160本 (120分)': 30,
             '100本.(60分)': 10,
             '120本.(60分)': 30,
             '付け放題 (90分)': 30
