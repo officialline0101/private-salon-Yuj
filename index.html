@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,10 +9,14 @@
     <style>
         /* 右端の細いナビ（固定） */
         .side-nav {
-            position: fixed; /* 画面スクロールしても固定 */
-            right: -5px; /* さらに右へ */
-            top: 80%; /* 画面中央に固定 */
-            transform: translateY(-50%) translateX(20px); /* 中央配置と右ずらし */
+            position: fixed;
+            /* 画面スクロールしても固定 */
+            right: -5px;
+            /* さらに右へ */
+            top: 80%;
+            /* 画面中央に固定 */
+            transform: translateY(-50%) translateX(13px);
+            /* 中央配置と右ずらし */
             background: #bd9888;
             display: flex;
             flex-direction: column;
@@ -19,11 +24,13 @@
             padding: 4px;
             border-radius: 10px 0 0 10px;
             z-index: 1000;
-            width: 35px; /* さらに細く */
+            width: 35px;
+            /* さらに細く */
         }
 
         .side-nav a:active {
-            transform: scale(1.0); /* タップした後に元のサイズに戻す */
+            transform: scale(1.0);
+            /* タップした後に元のサイズに戻す */
         }
 
         .side-nav a {
@@ -44,17 +51,22 @@
         }
 
         .side-nav a span {
-            font-size: 24px; /* 矢印をさらに大きく */
+            font-size: 24px;
+            /* 矢印をさらに大きく */
             position: absolute;
-            left: -0px; /* 左端に寄せる */
-            top: 13px; /* さらに下へ */
+            left: -0px;
+            /* 左端に寄せる */
+            top: 13px;
+            /* さらに下へ */
         }
 
         /* スマホ用の微調整 */
         @media (max-width: 600px) {
             .side-nav {
-                right: 2px; /* スマホではさらに右端に */
-                width: 30px; /* もっと細く */
+                right: 2px;
+                /* スマホではさらに右端に */
+                width: 30px;
+                /* もっと細く */
             }
 
             .side-nav a {
@@ -63,7 +75,8 @@
             }
 
             .side-nav a i {
-                font-size: 12px; /* スマホではもっと小さく */
+                font-size: 12px;
+                /* スマホではもっと小さく */
             }
         }
 
@@ -81,47 +94,48 @@
         }
 
         .container {
-    font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
-    font-weight: 300;
-    background-color: #fdfdfd;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 500px;
-    padding: 25px;
-    box-sizing: border-box;
-    margin: 0 auto;
-}
+            font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+            font-weight: 300;
+            background-color: #fdfdfd;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 500px;
+            padding: 25px;
+            box-sizing: border-box;
+            margin: 0 auto;
+        }
 
-h1 {
-    font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
-    font-weight: 300;
-    background: linear-gradient(135deg, #fdfdfd, #fdfdfd);
-    color: white;
-    padding: 20px;
-    border-radius: 0 15px 0px 45px;
-    text-align: center;
-    display: block;
-    margin: -20px -15px 20px -15px;
-    font-size: 26px;
-    font-weight: 600;
-    box-shadow: inset 0 -5px 10px rgba(255, 255, 255, 0.05);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
+        h1 {
+            font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+            font-weight: 300;
+            background: linear-gradient(135deg, #fdfdfd, #fdfdfd);
+            color: white;
+            padding: 20px;
+            border-radius: 0 15px 0px 45px;
+            text-align: center;
+            display: block;
+            margin: -20px -15px 20px -15px;
+            font-size: 26px;
+            font-weight: 600;
+            box-shadow: inset 0 -5px 10px rgba(255, 255, 255, 0.05);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
 
         .label {
-    font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
-    font-weight: 300; /* 細字だけを指定 */
-    display: block;
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #bd9888;
-    color: white;
-    border-radius: 4px;
-    text-align: center;
-}
+            font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
+            font-weight: 300;
+            /* 細字だけを指定 */
+            display: block;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #bd9888;
+            color: white;
+            border-radius: 4px;
+            text-align: center;
+        }
 
         input[type="text"],
         input[type="tel"],
@@ -378,10 +392,15 @@ h1 {
             display: none;
         }
 
+        #flatLabel,
+        #flatButtons {
+            display: none;
+        }
+
         #treatment-text {
             font-family: "Helvetica Neue", "Segoe UI", Verdana, sans-serif;
             font-weight: 300;
-            background-color: #f7f7f7;
+            background-color: #f5d8cb;
             padding: 10px;
             border-radius: 4px;
             margin-top: 1px;
@@ -630,41 +649,244 @@ h1 {
             /* 影も控えめに */
         }
 
-    /* ナビゲーションバー */
-    .sidebar {
-        position: fixed;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        background: #1e1e2d;
-        padding: 10px;
-        border-radius: 10px 0 0 10px;
-        z-index: 1000;
-    }
+        /* ナビゲーションバー */
+        .sidebar {
+            position: fixed;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #1e1e2d;
+            padding: 10px;
+            border-radius: 10px 0 0 10px;
+            z-index: 1000;
+        }
 
-    .sidebar a {
-        display: block;
-        padding: 15px;
-        color: white;
-        text-decoration: none;
-        text-align: center;
-        font-size: 14px;
-        margin-bottom: 10px;
-        background: #bd9888;
-        border-radius: 5px;
-        transition: background 0.3s;
-    }
+        .sidebar a {
+            display: block;
+            padding: 15px;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            font-size: 14px;
+            margin-bottom: 10px;
+            background: #bd9888;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
 
-    .sidebar a:hover {
-        background: #bd9888;
-    }
+        .sidebar a:hover {
+            background: #bd9888;
+        }
 
-    /* スクロール用のセクション */
-    .section {
-        padding: 50px 10px;
-        margin-top: 30px;
-    }
+        /* スクロール用のセクション */
+        .section {
+            padding: 50px 10px;
+            margin-top: 30px;
+        }
 
+        #selected-menus-display .menu-items-wrapper {
+            display: flex;
+            flex-direction: column;
+            /* 横並びではなく縦に並べる */
+            gap: 12px;
+        }
+
+        #selected-menus-display .menu-item {
+            width: 100%;
+            /* 横幅いっぱいに */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #e0fff8;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 15px;
+            line-height: 1.5;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+            transition: background-color 0.3s;
+            word-break: break-word;
+            box-sizing: border-box;
+        }
+
+        #selected-menus-display {
+            /* 既存のスタイルに追加でOK */
+            text-align: center;
+        }
+
+        #selected-menus-display::before {
+            content: "選択中のメニュー（最大3つまで）";
+            display: block;
+            /* blockに変更して横幅いっぱいに */
+            width: 100%;
+            /* 親要素に合わせて横幅を指定 */
+            font-size: 16px;
+            font-weight: bold;
+            padding: 12px 16px;
+            background-color: #bd9888;
+            color: #ffffff;
+            border: 1px solid #bd9888;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            margin-bottom: 16px;
+            text-align: center;
+            /* テキストを中央に */
+            box-sizing: border-box;
+            /* padding含めて100%幅に */
+        }
+
+        #selected-menus-display .menu-items-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: flex-start;
+        }
+
+        #selected-menus-display .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 100%;
+            background-color: #795546;
+            color: white;
+            /* ← 追加 */
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            line-height: 1.5;
+            word-break: break-word;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+            transition: background-color 0.3s;
+            flex: 1 1 auto;
+            min-width: 200px;
+        }
+
+        #selected-menus-display .menu-item:hover {
+            background-color: #bd9888;
+        }
+
+        #selected-menus-display .menu-item span {
+            flex: 1;
+            margin-right: 10px;
+            word-break: break-word;
+            white-space: normal;
+        }
+
+        #selected-menus-display .remove-button {
+            background: none;
+            border: none;
+            color: #d32f2f;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 4px 6px;
+            line-height: 1;
+            border-radius: 4px;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        #selected-menus-display .remove-button:hover {
+            background-color: #fbe9e7;
+            color: #b71c1c;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #selected-menus-display .remove-button {
+            background-color: #ffebee;
+            /* 薄い赤背景 */
+            border: 1px solid #e57373;
+            /* 輪郭も赤系で */
+            color: #c62828;
+            /* しっかりした赤文字 */
+            font-size: 18px;
+            /* 視認性UP */
+            font-weight: bold;
+            cursor: pointer;
+            padding: 6px 10px;
+            /* タップ範囲拡大 */
+            line-height: 1;
+            border-radius: 8px;
+            /* 丸みで優しい見た目 */
+            transition: all 0.2s ease;
+            min-width: 32px;
+            min-height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #selected-menus-display .remove-button:hover {
+            background-color: #ffcdd2;
+            /* ホバーで濃く */
+            color: #b71c1c;
+            border-color: #ef5350;
+        }
+
+#selected-menus-display {
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-size: 0 !important;
+    line-height: 0 !important;
+    opacity: 0 !important;
+}
+
+
+        .datetime-input {
+            width: 100%;
+            padding: 18px;
+            /* 少し大きめにして押しやすく */
+            font-size: 18px;
+            border: 2px solid #888;
+            /* 少し濃くして視認性アップ */
+            border-radius: 8px;
+            /* 指触りの良いデザイン */
+            box-sizing: border-box;
+            background-color: #fff;
+            color: #333;
+            appearance: none;
+            /* OSに左右されにくくする */
+            touch-action: manipulation;
+            /* モバイルのタップ精度向上 */
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .datetime-input:focus {
+            border-color: #007BFF;
+            box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.2);
+            /* タップ時の視覚的フィードバック */
+            outline: none;
+        }
+
+        .remove-button {
+            background-color: #e74c3c;
+            /* 赤色 */
+            color: white;
+            /* 文字色は白 */
+            border: none;
+            padding: 4px 8px;
+            cursor: pointer;
+            font-size: 14px;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .remove-button:hover {
+            background-color: #c0392b;
+            /* ホバー時に少し濃く */
+        }
     </style>
 </head>
 
@@ -707,6 +929,9 @@ h1 {
             <button type="button" onclick="showMenu('facial')">フェイシャルメニュー</button>
         </div>
 
+        <!-- メニュー表示エリア（選択されたメニュー名がここに出る） -->
+        <div id="selected-menus-display" style="display: none; font-weight: bold; margin-top: 10px;"></div>
+
         <div id="treatment-text" style="display: none; margin-bottom: 10px;"></div>
 
         <div id="male" class="menu-section">
@@ -714,8 +939,8 @@ h1 {
                 <span class="highlight-text">眉毛メニュー</span>
             </div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this, 'treatment1')" data-price="15000">アイブロウWAX</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment2')" data-price="15000">ハリウッドブロウリフト</button>
+                <button type="button" class="symptoms-button" onclick="selectSymptom(this, 'treatment1')" data-category="眉毛メニュー" data-price="15000">アイブロウWAX</button>
+                <button type="button" class="symptoms-button" onclick="selectSymptom(this, 'treatment2')" data-category="眉毛メニュー" data-price="15000">ハリウッドブロウリフト</button>
             </div>
         </div>
 
@@ -724,9 +949,9 @@ h1 {
                 <span class="highlight-text">まつげパーマ</span>
             </div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this, 'treatment3')" data-price="15000">ラッシュリフト(まつげパーマ)</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment4')" data-price="15000">ラッシュリフト＋アイブロウWAX</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment5')" data-price="15000">ラッシュリフト＋ハリウッドブロウリフト</button>
+                <button type="button" class="symptoms-button" onclick="selectSymptom(this, 'treatment3')" data-category="まつげパーマ" data-price="15000">ラッシュリフト(まつげパーマ)</button>
+                <button type="button" class="symptoms-button" onclick="selectSymptom(this, 'treatment4')" data-category="まつげパーマ" data-price="15000">ラッシュリフト＋アイブロウWAX</button>
+                <button type="button" class="symptoms-button" onclick="selectSymptom(this, 'treatment5')" data-category="まつげパーマ" data-price="15000">ラッシュリフト＋ハリウッドブロウリフト</button>
             </div>
         </div>
 
@@ -735,26 +960,34 @@ h1 {
                 <span class="highlight-text">まつげエクステ</span>
             </div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this, 'treatment6')" data-price="15000">フラットラッシュ</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment7')" data-price="15000">ボリュームラッシュ</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment8')" data-price="15000">バインドロック</button>
-                <button type="button" onclick="selectSymptom(this, 'treatment9')" data-price="15000">リペア(付け足し)</button>
+                <button type="button" class="symptoms-button" onclick="selectSymptom(this, 'treatment6')" data-category="まつげエクステ" data-price="15000">フラットラッシュ</button>
+                <button type="button" class="symptoms-button" onclick="selectSymptom(this, 'treatment7')" data-category="まつげエクステ" data-price="15000">ボリュームラッシュ</button>
+                <button type="button" class="symptoms-button" onclick="selectSymptom(this, 'treatment8')" data-category="まつげエクステ" data-price="15000">バインドロック</button>
+                <button type="button" class="symptoms-button" onclick="selectSymptom(this, 'treatment9')" data-category="まつげエクステ" data-price="15000">リペア(付け足し)</button>
+            </div>
+
+            <label id="flatLabel"></label>
+            <div id="flatButtons" class="irradiations">
+                <button type="button" id="itiirradiations" onclick="selectirradiations(this)">フラット80本 (60分)</button>
+                <button type="button" id="tniiirradiations" onclick="selectirradiations(this)">フラット100本 (60分)</button>
+                <button type="button" id="saaniirradiations" onclick="selectirradiations(this)">フラット120本 (90分)</button>
+                <button type="button" id="siiirradiations" onclick="selectirradiations(this)">フラット付け放題 (90分)</button>
             </div>
 
             <label id="repairLabel"></label>
             <div id="repairButtons" class="irradiations">
-                <button type="button" id="sevenirradiations" onclick="selectirradiations(this)">80本 (60分)</button>
-                <button type="button" id="eightirradiations" onclick="selectirradiations(this)">100本 (60分)</button>
-                <button type="button" id="nineirradiations" onclick="selectirradiations(this)">120本 (90分)</button>
-                <button type="button" id="tenirradiations" onclick="selectirradiations(this)">付け放題 (90分)</button>
+                <button type="button" id="sevenirradiations" onclick="selectirradiations(this)">ボリューム80本 (60分)</button>
+                <button type="button" id="eightirradiations" onclick="selectirradiations(this)">ボリューム100本 (60分)</button>
+                <button type="button" id="nineirradiations" onclick="selectirradiations(this)">ボリューム120本 (90分)</button>
+                <button type="button" id="tenirradiations" onclick="selectirradiations(this)">ボリューム付け放題 (90分)</button>
             </div>
 
             <label id="baindLabel"></label>
             <div id="baindButtons" class="irradiations">
-                <button type="button" id="oneirradiations" onclick="selectirradiations(this)">80本 (90分)</button>
-                <button type="button" id="tuirradiations" onclick="selectirradiations(this)">100本 (90分)</button>
-                <button type="button" id="suriirradiations" onclick="selectirradiations(this)">120本 (120分)</button>
-                <button type="button" id="foirradiations" onclick="selectirradiations(this)">160本 (120分)</button>
+                <button type="button" id="oneirradiations" onclick="selectirradiations(this)">バインド80本 (90分)</button>
+                <button type="button" id="tuirradiations" onclick="selectirradiations(this)">バインド100本 (90分)</button>
+                <button type="button" id="suriirradiations" onclick="selectirradiations(this)">バインド120本 (120分)</button>
+                <button type="button" id="foirradiations" onclick="selectirradiations(this)">バインド160本 (120分)</button>
             </div>
         </div>
 
@@ -763,7 +996,8 @@ h1 {
                 <span class="highlight-text">フェイシャルメニュー</span>
             </div>
             <div class="symptoms">
-                <button type="button" onclick="selectSymptom(this, 'treatment10')" data-price="15000">肌育フェイシャルエステ</button>
+                <button type="button" onclick="selectSymptom(this, 'treatment10')"
+                    data-price="15000">肌育フェイシャルエステ</button>
             </div>
         </div>
 
@@ -818,7 +1052,7 @@ h1 {
     <script src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"></script>
     <script>
         let visitCount = '';
-        let selectedMenu = '';
+        let selectedMenu = [];
         let selectedSymptom = [];  // 配列として定義
         let selectedFullDate = '';
         let currentDate = new Date();
@@ -899,13 +1133,28 @@ h1 {
             if (savedPhone) document.getElementById('phone').value = savedPhone;
         });
 
+        // スムーズスクロール
+        document.querySelectorAll('.side-nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 20,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
         function updateDisplayInfo() {
             const name = document.getElementById('name').value;
             const visitCountText = visitCount ? `・<span style="color:#bd9888;"><strong>来店回数</strong></span>：${visitCount}` : '・来店回数';
             const selectedMenuText = selectedMenu ? `・<span style="color:#bd9888;"><strong>コース</strong></span>：${selectedMenu}` : '・コースが未選択です';
 
             const selectedSymptomText = selectedSymptom.length > 0
-                ? `<span style="color:#bd9888;"><strong>【メニュー】</strong></span><br>・${selectedSymptom.join('<br>')}`
+                ? `<span style="color:#bd9888;"><strong>【メニュー】</strong></span><br>・${selectedSymptom.map(item => `《${item.category}》${item.name}`).join('<br>・')}`
                 : '・メニューが未選択です';
 
             const irradiationsText = irradiationsCount
@@ -932,11 +1181,7 @@ h1 {
             <button class="edit-button" onclick="scrollToElement('firstVisit')">修正する</button>
         </div>
         <hr>
-        <div class="info-row">
-            <p>${selectedMenuText}</p>
-            <button class="edit-button" onclick="scrollToElement('course')">修正する</button>
-        </div>
-        <hr>
+
         <div class="info-row">
             <p>${selectedSymptomText}</p>
             <button class="edit-button" onclick="scrollToElement('male'); scrollToElement('female'); scrollToElement('extensions'); scrollToElement('facial');">修正する</button>
@@ -1009,65 +1254,41 @@ h1 {
             // 選択された日時をリセット
             selectedFullDate = '';
 
-            // ボタンの選択状態を切り替える
-            button.classList.toggle('active');
-
-            // 選択されたオプションを取得
-            const updatedSelectedButtons = document.querySelectorAll('.symptoms button.active');
             const treatmentText = document.getElementById('treatment-text');
-            selectedSymptom = button.textContent;
+            const selectedMenusDisplay = document.getElementById("selected-menus-display");
+            const selectedMenuNameDiv = document.getElementById('selected-menu-name');
 
-            const repairLabel = document.getElementById('repairLabel');
-            const repairButtons = document.getElementById('repairButtons');
-
-            const baindLabel = document.getElementById('baindLabel');
-            const baindButtons = document.getElementById('baindButtons');
-
-            if (selectedSymptom === 'フラットラッシュ' || selectedSymptom === 'ボリュームラッシュ') {
-                button.insertAdjacentElement("afterend", repairLabel);
-                repairLabel.insertAdjacentElement("afterend", repairButtons);
-                repairLabel.style.display = 'block';
-                repairButtons.style.display = 'flex';
+            // クリックしたボタンがすでに `active` なら解除
+            if (button.classList.contains('active')) {
+                button.classList.remove('active');
             } else {
-                repairLabel.style.display = 'none';
-                repairButtons.style.display = 'none';
+                let updatedSelectedButtons = document.querySelectorAll('.symptoms .symptoms-button.active');
+                if (updatedSelectedButtons.length >= 6) return;
+                button.classList.add('active');
             }
 
-            if (selectedSymptom === 'バインドロック') {
-                button.insertAdjacentElement("afterend", baindLabel);
-                baindLabel.insertAdjacentElement("afterend", baindButtons);
-                baindLabel.style.display = 'block';
-                baindButtons.style.display = 'flex';
-            } else {
-                baindLabel.style.display = 'none';
-                baindButtons.style.display = 'none';
-            }
+            // ← ここで最新状態を再取得
+            let updatedSelectedButtons = document.querySelectorAll('.symptoms .symptoms-button.active');
 
-            if (updatedSelectedButtons.length === 0) {
-                // すべてのボタンの選択が解除された場合、メニュー時間を0にリセット
-                selectedMenuTime = 0;
-                selectedSymptom = null; // 選択されたメニューをリセット
-                menuPrice = 0; // メニュー価格をリセット
-                treatmentText.style.display = 'none';
-                // repairButtons も非表示にする
-                repairLabel.style.display = 'none';
-                repairButtons.style.display = 'none';
-                // repairButtons も非表示にする
-                baindLabel.style.display = 'none';
-                rbaindButtons.style.display = 'none';
-                return; // ここで処理を終了
-            } else {
-                // 1つだけ選択状態にする
-                if (updatedSelectedButtons.length > 1) {
-                    updatedSelectedButtons.forEach(btn => btn.classList.remove('active'));
-                    button.classList.add('active'); // クリックしたボタンだけを選択
-                }
+            // メニュー時間と価格をリセット
+            selectedMenuTime = 0;
+            selectedSymptom = [];
+            menuPrice = 0;
 
-                // 選択されたメニューの時間を取得して保存
-                const selectedMenu = button.textContent;
-                selectedMenuTime = menuTimes[selectedMenu] || 0; // メニュー時間を取得して保存
-                selectedSymptom = [selectedMenu]; // 選択されたメニュー名を配列として保存
-                menuPrice = parseInt(button.getAttribute('data-price'), 10) || 0;  // メニューの価格を取得
+            // ボタンがすべて解除された場合
+if (updatedSelectedButtons.length === 0) {
+    treatmentText.style.display = 'none';
+    selectedMenuNameDiv.style.display = 'none';
+    return;
+            } else {
+                // 選択された各ボタンについて処理
+                updatedSelectedButtons.forEach((btn) => {
+                    const selectedMenuName = btn.textContent;
+                    const category = btn.getAttribute('data-category'); // 追加
+                    selectedSymptom.push({ category, name: selectedMenuName }); // ← 変更
+                    selectedMenuTime += menuTimes[selectedMenuName] || 0;
+                    menuPrice += parseInt(btn.getAttribute('data-price'), 10) || 0;
+                });
             }
 
             console.log('選択されたメニューの時間:', selectedMenuTime);
@@ -1086,15 +1307,15 @@ h1 {
             } else if (treatmentId === 'treatment5') {
                 treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：120分</strong><br></div><div style="text-align: right;"><strong>料金：12,000円</strong></div>`;
             } else if (treatmentId === 'treatment6') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong></strong>80本 (60分)：6,500円<br>100本 (60分)：7,500円<br>120本 (90分)：8,000円<br>付け放題 (90分)：8,500円</div><div style="text-align: center;"><strong>以下の中からお選びください</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;"><strong></strong><div style="text-align: center;"><strong>↑の中からお選びください↑<strong></strong><br>80本 (60分)：6,500円<br>100本 (60分)：7,500円<br>120本 (90分)：8,000円<br>付け放題 (90分)：8,500円</div><div style="text-align: center;"></div>`;
             } else if (treatmentId === 'treatment7') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong></strong>80本 (60分)：6,500円<br>100本 (60分)：7,500円<br>120本 (90分)：8,000円<br>付け放題 (90分)：8,500円</div><div style="text-align: center;"><strong>以下の中からお選びください</strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;"><strong></strong><div style="text-align: center;"><strong>↑の中からお選びください↑<strong></strong><br>80本 (60分)：6,500円<br>100本 (60分)：7,500円<br>120本 (90分)：8,000円<br>付け放題 (90分)：8,500円</div><div style="text-align: center;"></div>`;
             } else if (treatmentId === 'treatment8') {
-                treatmentText.innerHTML = `<div style="text-align: left;"><strong></strong>80本 (90分)：8,000円<br>100本 (90分)：9,000円<br>120本 (120分)：10,000円<br>160本(120分)：12,000円</div><div style="text-align: center;"><strong>以下の中からお選びください<strong></strong></div>`;
+                treatmentText.innerHTML = `<div style="text-align: left;"><strong></strong><div style="text-align: center;"><strong>↑の中からお選びください↑<strong></strong><br>80本 (90分)：8,000円<br>100本 (90分)：9,000円<br>120本 (120分)：10,000円<br>160本(120分)：12,000円</div></div>`;
             } else if (treatmentId === 'treatment9') {
                 treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：45分</strong><br>※本数によって料金・時間に変動がございます</div><div style="text-align: right;"><strong>料金：2,970円</strong></div>`;
-} else if (treatmentId === 'treatment10') {
-    treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：90分</strong><br>
+            } else if (treatmentId === 'treatment10') {
+                treatmentText.innerHTML = `<div style="text-align: left;"><strong>所要時間：90分</strong><br>
     4種のフェイシャルメニューからお悩みやご希望に合わせたご相談が可能です。<br>
     <span style="font-size: 0.8em;">・光フェイシャル 11,000円</span><br>
     <span style="font-size: 0.8em;">・エクソソームハーブピーリング 9,800円</span><br>
@@ -1118,68 +1339,133 @@ h1 {
                 treatmentText.innerHTML = '';
             }
 
-            // `treatment-text` を選択されたボタンの直後に移動
-            button.parentNode.insertBefore(treatmentText, button.nextSibling);
+            // 移動させる
+            button.parentNode.insertBefore(document.getElementById("treatment-text"), button.nextSibling);
 
-            // トリートメントテキストを表示
+            if (selectedSymptom.length > 0) {
+                selectedMenusDisplay.innerHTML = `
+        <div class="menu-items-wrapper">
+            ${selectedSymptom.map(item => `
+                <div class="menu-item">
+                    <span>《${item.category}》<br>${item.name}</span>
+                    <button class="remove-button" data-category="${item.category}" data-name="${item.name}" onclick="removeSymptom(this)">✕</button>
+                </div>
+            `).join('')}
+        </div>
+    `;
+                selectedMenusDisplay.style.display = 'block';
+            } else {
+                selectedMenusDisplay.innerHTML = '';
+                selectedMenusDisplay.style.display = 'none';
+            }
+
+            // ラベルとボタンの要素取得
+            const repairLabel = document.getElementById('repairLabel');
+            const repairButtons = document.getElementById('repairButtons');
+            const baindLabel = document.getElementById('baindLabel');
+            const baindButtons = document.getElementById('baindButtons');
+            const flatLabel = document.getElementById('flatLabel');
+            const flatButtons = document.getElementById('flatButtons');
+
+            // すべてのラベルとボタンを非表示
+            repairLabel.style.display = 'none';
+            repairButtons.style.display = 'none';
+            baindLabel.style.display = 'none';
+            baindButtons.style.display = 'none';
+            flatLabel.style.display = 'none';
+            flatButtons.style.display = 'none';
+
+            // 選択中のボタンのテキストを取得
+            const selectedNames = Array.from(updatedSelectedButtons).map(btn => btn.textContent);
+
+            // ラベルやボタンが既に挿入されている親から remove せずに、一度表示対象の直後に再配置（display制御のみ）
+            if (selectedNames.includes('フラットラッシュ')) {
+                const targetButton = Array.from(updatedSelectedButtons).find(btn => btn.textContent === 'フラットラッシュ');
+
+                if (flatLabel.previousElementSibling !== targetButton) {
+                    targetButton.insertAdjacentElement("afterend", flatLabel);
+                    flatLabel.insertAdjacentElement("afterend", flatButtons);
+                }
+
+                flatLabel.style.display = 'block';
+                flatButtons.style.display = 'flex';
+            } else {
+                flatLabel.style.display = 'none';
+                flatButtons.style.display = 'none';
+            }
+
+            if (selectedNames.includes('ボリュームラッシュ')) {
+                const targetButton = Array.from(updatedSelectedButtons).find(btn => btn.textContent === 'ボリュームラッシュ');
+
+                if (repairLabel.previousElementSibling !== targetButton) {
+                    targetButton.insertAdjacentElement("afterend", repairLabel);
+                    repairLabel.insertAdjacentElement("afterend", repairButtons);
+                }
+
+                repairLabel.style.display = 'block';
+                repairButtons.style.display = 'flex';
+            } else {
+                repairLabel.style.display = 'none';
+                repairButtons.style.display = 'none';
+            }
+
+            // バインドロックの処理
+            if (selectedNames.includes('バインドロック')) {
+                const targetButton = Array.from(updatedSelectedButtons).find(btn => btn.textContent === 'バインドロック');
+
+                if (baindLabel.previousElementSibling !== targetButton) {
+                    targetButton.insertAdjacentElement("afterend", baindLabel);
+                    baindLabel.insertAdjacentElement("afterend", baindButtons);
+                }
+
+                baindLabel.style.display = 'block';
+                baindButtons.style.display = 'flex';
+            } else {
+                baindLabel.style.display = 'none';
+                baindButtons.style.display = 'none';
+            }
+
             treatmentText.style.display = 'block';
 
-            // 選択されたメニューの名前と価格を取得
-            const symptomName = button.textContent;  // ボタンのテキストを取得
-            selectedSymptom = [symptomName];  // 選択されたメニュー名を配列として保存
-            menuPrice = parseInt(button.getAttribute('data-price'), 10) || 0;  // メニューの価格を取得
-
-            // 表示を更新
             updateDisplayInfo();
         }
 
-        function selectirradiations(button) {
-            /* 訪問回数ボタンの選択状態をリセット */
-            document.getElementById('sevenirradiations').classList.remove('active');
-            document.getElementById('eightirradiations').classList.remove('active');
-            document.getElementById('nineirradiations').classList.remove('active');
-            document.getElementById('tenirradiations').classList.remove('active');
-            document.getElementById('oneirradiations').classList.remove('active');
-            document.getElementById('tuirradiations').classList.remove('active');
-            document.getElementById('suriirradiations').classList.remove('active');
-            document.getElementById('foirradiations').classList.remove('active');
-            /* クリックされたボタンを選択状態にする */
+function selectirradiations(button) {
+    // 選択された日時をリセット
+    selectedFullDate = '';
 
-            // 選択された日時をリセット
-            selectedFullDate = '';
+    // ボタンの選択状態を切り替える
+    button.classList.toggle('active');
 
-            // ボタンの選択状態を切り替える
-            button.classList.toggle('active');
+    // 選択されたオプションを取得
+    const selectedButtons = document.querySelectorAll('.irradiations button.active');
+    const selectedIrradiations = Array.from(selectedButtons).map(btn => btn.innerText);
+    irradiationsCount = selectedIrradiations.join(', ');
 
-            // 選択されたオプションを取得
-            const selectedButtons = document.querySelectorAll('.irradiations button.active');
-            const selectedIrradiations = Array.from(selectedButtons).map(btn => btn.innerText);
-            irradiationsCount = selectedIrradiations.join(', ');
+    // すべてのオプションの価格を再計算
+    optionsPrice = 0; // 全体をリセットして再計算
+    let totalirradiationsTime = 0; // 選択されたすべてのオプションの合計時間
+    selectedButtons.forEach(btn => {
+        const price = parseInt(btn.getAttribute('data-price'), 10);
+        optionsPrice += price;
 
-            // すべてのオプションの価格を再計算
-            optionsPrice = 0; // 全体をリセットして再計算
-            let totalirradiationsTime = 0; // 選択されたすべてのオプションの合計時間
-            selectedButtons.forEach(btn => {
-                const price = parseInt(btn.getAttribute('data-price'), 10);
-                optionsPrice += price;
+        // 各オプションの時間を加算
+        const irradiationName = btn.innerText;
+        const irradiationTime = irradiationsTimes[irradiationName] || 0;
+        totalirradiationsTime += irradiationTime;
+    });
 
-                // 各オプションの時間を加算
-                const irradiationName = btn.innerText;
-                const irradiationTime = irradiationsTimes[irradiationName] || 0;
-                totalirradiationsTime += irradiationTime;
-            });
+    // 合計時間を設定
+    selectedirradiationsTime = totalirradiationsTime;
 
-            // selectedirradiationsTimeに合計時間を設定
-            selectedirradiationsTime = totalirradiationsTime;
+    console.log('選択されたオプションの合計時間:', selectedirradiationsTime);
 
-            console.log('選択されたオプションの合計時間:', selectedirradiationsTime);
+    // カレンダーを更新
+    fetchAvailability(currentDate);
 
-            // カレンダーを更新するために取得する日付を渡す
-            fetchAvailability(currentDate);
-
-            // 表示を更新
-            updateDisplayInfo();
-        }
+    // 表示を更新
+    updateDisplayInfo();
+}
 
         function updateTotalAmount() {
             totalAmount = menuPrice + optionsPrice; // オプションの価格も含める
@@ -1222,7 +1508,6 @@ h1 {
             // 選択されたメニューセクションを表示
             document.querySelectorAll('.menu-section').forEach(section => {
                 section.classList.remove('active');
-                section.querySelectorAll('button').forEach(btn => btn.classList.remove('active'));
             });
 
             // 対応するメニューボタンを選択状態にする
@@ -1236,16 +1521,14 @@ h1 {
             // `treatment-text` の内容をリセット
             document.getElementById("treatment-text").innerHTML = "";
 
-            // メニューとオプションをリセット
-            selectedSymptom = '';      // メニューのリセット
-            irradiationsCount = '';    // オプションのリセット
-            menuPrice = 0;             // メニューの価格リセット
-            optionsPrice = 0;          // オプションの価格リセット
-            totalAmount = 0;           // 合計金額リセット
+      // メニューのリセット
+    // irradiationsCount = ''; // ← ここを残すとirradiations選択が解除される
+    // optionsPrice = 0;       // ← 価格も保持したいならこれも消す
+    menuPrice = 0;
+    totalAmount = 0;
 
-            // 表示を更新
-            updateDisplayInfo();
-        }
+    updateDisplayInfo();
+}
 
         function selectDate(cell) {
             // "unavailable" クラスが付いている場合はクリックを無効化
@@ -1306,10 +1589,18 @@ h1 {
                 return;
             }
 
+// selectedSymptomを文字列に整形
+const selectedSymptomText = formData.selectedSymptom
+  ? formData.selectedSymptom.map(item => `${item.name}`).join(',')
+  : 'メニュー未選択';
+
+// irradiationsCountの整形（nullチェック）
+const irradiationsText = formData.irradiationsCount || '';
+
             // LINEトークにメッセージを送信
             liff.sendMessages([{
                 type: 'text',
-                text: `【予約フォーム】\nお名前：${formData.name}\n電話番号：${formData.phone}\nご来店回数：${formData.visitCount}\n紹介者様：${formData.introduction}\nコース：${formData.selectedMenu}\nメニュー：${formData.selectedSymptom},${formData.irradiationsCount}\n希望日時：\n ${formData.dates[0]}\nメッセージ：${formData.message}`
+                text: `【予約フォーム】\nお名前：${formData.name}\n電話番号：${formData.phone}\nご来店回数：${formData.visitCount}\n紹介者様：${formData.introduction}\nメニュー：${selectedSymptomText},${irradiationsText}\n希望日時：\n ${formData.dates[0]}\nメッセージ：${formData.message}`
             }]).then(() => {
                 /* メッセージ送信成功時の処理 */
                 alert('当日キャンセルは無いようにお願いいたします。');
@@ -1374,17 +1665,17 @@ h1 {
             const table = calendar.querySelector('table tbody');
 
             const times = [
-    '10:00', '10:15', '10:30', '10:45',
-    '11:00', '11:15', '11:30', '11:45',
-    '12:00', '12:15', '12:30', '12:45',
-    '13:00', '13:15', '13:30', '13:45',
-    '14:00', '14:15', '14:30', '14:45',
-    '15:00', '15:15', '15:30', '15:45',
-    '16:00', '16:15', '16:30', '16:45',
-    '17:00', '17:15', '17:30', '17:45',
-    '18:00', '18:15', '18:30', '18:45',
-    '19:00'
-];
+                '10:00', '10:15', '10:30', '10:45',
+                '11:00', '11:15', '11:30', '11:45',
+                '12:00', '12:15', '12:30', '12:45',
+                '13:00', '13:15', '13:30', '13:45',
+                '14:00', '14:15', '14:30', '14:45',
+                '15:00', '15:15', '15:30', '15:45',
+                '16:00', '16:15', '16:30', '16:45',
+                '17:00', '17:15', '17:30', '17:45',
+                '18:00', '18:15', '18:30', '18:45',
+                '19:00'
+            ];
 
             if (table.rows.length === 0) {
                 for (const time of times) {
@@ -1414,7 +1705,6 @@ h1 {
                     row.cells[i].classList.remove('available', 'unavailable', 'selected');
                 }
             }
-
 
             // 現在の日時を取得
             const now = new Date();
