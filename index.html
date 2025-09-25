@@ -296,20 +296,21 @@
   color: #666;
 }
 
-/* ▼スマホ（横幅768px以下）は“必ず2列” */
+/* ▼スマホ（横幅768px以下）は“縦1列” */
 @media (max-width: 768px) {
   .irradiations {
+    flex-direction: column; /* ←ここを追加：縦並びにする */
     gap: 10px; /* 指で押しやすいよう少し広め */
   }
 
   .irradiations button {
-    /* 2列＝それぞれ約50%幅（横gap10pxの半分を相殺） */
-    flex: 0 0 calc(50% - 5px);
-    max-width: calc(50% - 5px);
+    flex: 0 0 100%;  /* ←幅100%に変更 */
+    max-width: 100%; /* ←同上 */
     font-size: 12px;  /* 視認性を少しUP */
     line-height: 1.25;
   }
 }
+
         .menu-sections {
             display: flex;
             flex-direction: column;
