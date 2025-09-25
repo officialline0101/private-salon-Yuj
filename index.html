@@ -1338,6 +1338,7 @@
         <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：7000円">4週間以内ナチュラルリペア</button>
         <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：9000円">4週間以内スタンダートリペア</button>
         <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：10000円">4週間以内付け放題リペア</button>
+        <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：8000円～：90分">フル付け替え</button>
       </div>
     </div>
   </div>
@@ -1450,6 +1451,7 @@
 
         // 訪問回数ごとの時間設定 (例：初めて=20分、2回目以降=15分)
         let irradiationsTimes = {
+            'フル付け替え': 90,
             'ナチュラル（80束以内）': 90,
             'スタンダート（140束以内）': 120,
             '付け放題（フル装着）': 120,
