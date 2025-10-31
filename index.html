@@ -1233,7 +1233,7 @@
     <!-- ▼ フラットラッシュのオプション（treatment6 専用） -->
     <div class="option-group" data-for="treatment6" style="display:none;">
       <div class="labeltyuuou">
-        <span class="highlight-text">フラットラッシュオプション<br>お選びください</span>
+        <span class="highlight-text">フラットラッシュオプション<span class="required">必須</span><br>お選びください</span>
       </div>
       <div class="irradiations">
         <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：6,500円">フラット80本 (60分)</button>
@@ -1250,7 +1250,7 @@
     <!-- ▼ デザインキープラッシュのオプション（treatment7 専用） -->
     <div class="option-group" data-for="treatment7" style="display:none;">
       <div class="labeltyuuou">
-        <span class="highlight-text">デザインキープラッシュオプション<br>お選びください</span>
+        <span class="highlight-text">デザインキープラッシュオプション<span class="required">必須</span><br>お選びください</span>
       </div>
       <div class="irradiations">
         <button type="button" onclick="selectirradiations(this)"
@@ -1308,7 +1308,7 @@
 
     <div class="option-group" data-for="treatment16" style="display:none;">
       <div class="labeltyuuou">
-        <span class="highlight-text">フラットラッシュオプション<br>お選びください</span>
+        <span class="highlight-text">フラットラッシュオプション<span class="required">必須</span><br>お選びください</span>
       </div>
       <div class="irradiations">
         <button type="button" onclick="selectirradiations(this)"
@@ -1319,7 +1319,7 @@
                 data-note="それぞれの通常本数に&#10;戻すメニューです&#10;料金：5940円〜">４週間以内リペア（60分）</button>
         <button type="button" onclick="selectirradiations(this)"
                 data-price="15000"
-                data-note="料金：6500円〜">フル付け替え（90分）</button>
+                data-note="料金：6500円〜">1ヶ月以上経過・フル付替（90分）</button>
       </div>
       <div class="info-textkugiri">　　　　　　　　　　　　　　　　　</div>
     </div>
@@ -1329,21 +1329,21 @@
 
     <div class="option-group" data-for="treatment17" style="display:none;">
       <div class="labeltyuuou">
-        <span class="highlight-text">デザインキープラッシュオプション<br>お選びください</span>
+        <span class="highlight-text">デザインキープラッシュオプション<span class="required">必須</span><br>お選びください</span>
       </div>
       <div class="irradiations">
-        <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：6500円">３週間以内ナチュラルリペア</button>
-        <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：8000円">３週間以内スタンダートリペア</button>
-        <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：9000円">３週間以内付け放題リペア</button>
-        <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：7000円">4週間以内ナチュラルリペア</button>
-        <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：9000円">4週間以内スタンダートリペア</button>
-        <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：10000円">4週間以内付け放題リペア</button>
-        <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：8000円～：90分">フル付け替え</button>
+        <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：6500円">３週間以内ナチュラルリペア（60分）</button>
+        <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：8000円">３週間以内スタンダートリペア（75分）</button>
+        <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：9000円">３週間以内付け放題リペア（75分）</button>
+        <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：7000円">4週間以内ナチュラルリペア（75分）</button>
+        <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：9000円">4週間以内スタンダートリペア（75分）</button>
+        <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：10000円">4週間以内付け放題リペア（90分）</button>
+        <button type="button" onclick="selectirradiations(this)" data-price="15000" data-note="料金：8000円～：90分">1ヶ月以上経過・フル付替（90分）</button>
       </div>
     </div>
   </div>
   </div>
-
+        
         <div id="facialmenusecond" class="menu-section">
             <div class="labeltyuuou">
                 <span class="highlight-text">◆フェイシャルメニュー◆</span>
@@ -1451,6 +1451,7 @@
 
         // 訪問回数ごとの時間設定 (例：初めて=20分、2回目以降=15分)
         let irradiationsTimes = {
+            '1ヶ月以上経過・フル付替（90分）': 90,
             'フル付け替え': 90,
             'ナチュラル（80束以内）': 90,
             'スタンダート（140束以内）': 120,
@@ -1464,6 +1465,12 @@
             '4週間以内ナチュラルリペア': 60,
             '4週間以内スタンダートリペア': 90,
             '4週間以内付け放題リペア': 90,
+            '３週間以内ナチュラルリペア（60分）': 60,
+            '３週間以内スタンダートリペア（75分）': 90,
+            '３週間以内付け放題リペア（75分）': 90,
+            '4週間以内ナチュラルリペア（75分）': 60,
+            '4週間以内スタンダートリペア（75分）': 90,
+            '4週間以内付け放題リペア（90分）': 90,
             'フラット80本 (60分)': 0,
             'フラット100本 (60分)': 0,
             'フラット120本 (90分)': 30,
