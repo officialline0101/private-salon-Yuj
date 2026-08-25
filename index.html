@@ -982,7 +982,7 @@
         }
 
         #selected-menus-display::before {
-            content: "選択中のメニュー（最大3つまで）";
+            content: "選択中のメニュー（最大2つまで）";
             display: block;
             width: 100%;
             font-size: 16px;
@@ -1702,6 +1702,22 @@ function recalcIrradiationsState() {
   });
 }
 
+// ② 複数選択できる最大数
+const MAX_MENU_SELECT = 2;
+
+// ③ 複数選択を許可しないメニューセクション（まつげパーマ 2回目以降）
+const EXCLUSIVE_MENU_SECTION_IDS = ['eyelashpermsecond'];
+function isExclusiveMenuButton(btn) {
+  return EXCLUSIVE_MENU_SECTION_IDS.some(id => btn.closest(`#${id}`) !== null);
+}
+
+// onclick="selectSymptom(this, 'treatmentX')" から treatmentId を取り出す
+function getTreatmentIdFromButton(btn) {
+  const onclickStr = btn.getAttribute('onclick') || '';
+  const m = onclickStr.match(/selectSymptom\(\s*this\s*,\s*['"]([^'"]+)['"]\s*\)/);
+  return m ? m[1] : null;
+}
+
 // ★ 追加：本体メニュー（.symptoms 直下の button）だけを対象にする
 function getActiveMainButtons() {
   return Array.from(document.querySelectorAll('.symptoms > button.active'));
@@ -1724,8 +1740,18 @@ function selectSymptom(button, treatmentId) {
   // 追加前に「本体の選択数」をチェック（オプションは数えない）
   if (!wasActive) {
     const activeMainBefore = getActiveMainButtons();
-    if (activeMainBefore.length >= 3) {
-      return; // 上限3
+
+    // ③ まつげパーマ（2回目以降）は複数選択不可
+    //    → このメニューを選ぶとき／このメニューが選択中に他を選ぶときは、既存の選択をすべて解除して単独選択にする
+    const isExclusive = isExclusiveMenuButton(button);
+    const exclusiveActive = activeMainBefore.some(isExclusiveMenuButton);
+    if (isExclusive || exclusiveActive) {
+      activeMainBefore.forEach(b => {
+        b.classList.remove('active');
+        toggleOptionGroup(getTreatmentIdFromButton(b), false);
+      });
+    } else if (activeMainBefore.length >= MAX_MENU_SELECT) {
+      return; // ② 上限2
     }
   }
 
@@ -2415,12 +2441,11 @@ const irradiationsText = formData.irradiationsCount
                     // メニュー時間と訪問回数の時間を合計して、終了時間を設定
                     slotEnd.setMinutes(slotStart.getMinutes() + menuDuration + visitDuration + irradiationsDuration);
 
-                    // 18時以降に終了する予約を不可にする (17:30は可)
-                    if (slotEnd.getHours() === 19 && slotEnd.getMinutes() > 0) {
-                        cell.textContent = '✕';
-                        cell.classList.add('unavailable');
-                        continue;
-                    } else if (slotEnd.getHours() > 19) {
+                    // 当日19:00より後に終了する予約を不可にする（19:00ちょうど終了は可）
+                    // ※ getHours() 比較だと合計時間が翌日0時を超えた際に判定をすり抜けるため、Date同士で比較する
+                    const closingTime = new Date(slotStart);
+                    closingTime.setHours(19, 0, 0, 0);
+                    if (slotEnd > closingTime) {
                         cell.textContent = '✕';
                         cell.classList.add('unavailable');
                         continue;
